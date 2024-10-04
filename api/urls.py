@@ -1,8 +1,11 @@
 from django.urls import path,include
-from . import views
+from .views import Employees,EmployeeDetail,studentsView,studentDetailView
 
 
 urlpatterns = [
-    path("students", views.studentsView),
-    path("students/<int:pk>", views.studentDetailView)
+    path("students", studentsView),
+    path("students/<int:pk>", studentDetailView),
+
+    path("employees/", Employees.as_view()),
+    path("employees/<int:pk>",EmployeeDetail.as_view())
 ]
